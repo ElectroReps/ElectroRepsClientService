@@ -34,12 +34,12 @@ public class ClientController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> updateClient(@RequestParam Long id, @RequestBody ClientInfoDto client) {
+    public ResponseEntity<?> updateClient(@PathVariable Long id, @RequestBody ClientInfoDto client) {
         return clientService.updateClient(id, client);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteClient(@RequestParam Long id) {
+    public ResponseEntity<?> deleteClient(@PathVariable Long id) {
         return clientService.deleteClient(id);
     }
 }

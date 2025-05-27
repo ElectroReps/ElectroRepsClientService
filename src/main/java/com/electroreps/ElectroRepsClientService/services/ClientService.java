@@ -52,10 +52,10 @@ public class ClientService {
         if (existingClient.isEmpty()) {
             return ResponseEntity.status(404).body("No client found with id " + id);
         }
-        if(client.getEmail() != null) {
+        if(client.getEmail() != null && !client.getEmail().isEmpty()) {
             existingClient.get().setEmail(client.getEmail());
         }
-        if(client.getName() != null) {
+        if(client.getName() != null && !client.getName().isEmpty()) {
             existingClient.get().setName(client.getName());
         }
 
