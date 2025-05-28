@@ -59,9 +59,9 @@ public class ClientService {
             existingClient.get().setName(client.getName());
         }
 
-        clientRepository.save(existingClient.get());
+        Client savedClient = clientRepository.save(existingClient.get());
         // Logic to update the client
-        return ResponseEntity.ok(existingClient.get());
+        return ResponseEntity.ok(savedClient);
 
     }
 
