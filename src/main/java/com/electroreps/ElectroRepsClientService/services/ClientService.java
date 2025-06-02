@@ -3,6 +3,7 @@ package com.electroreps.ElectroRepsClientService.services;
 import com.electroreps.ElectroRepsClientService.dtos.ClientInfoDto;
 import com.electroreps.ElectroRepsClientService.models.Client;
 import com.electroreps.ElectroRepsClientService.repositories.ClientRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +12,11 @@ import org.springframework.stereotype.Service;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class ClientService {
 
-    @Autowired
-    private ClientRepository clientRepository;
+
+    private final ClientRepository clientRepository;
 
     public ResponseEntity<?> getClientById(Long clientId) {
 
